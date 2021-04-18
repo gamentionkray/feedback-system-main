@@ -4,14 +4,14 @@ $sql = "SELECT TE.t_name as t_name, TE.t_id as t_id FROM teachers TE where TE.t_
 $result = $conn->query($sql);
 $row = $result->fetch_array(MYSQLI_ASSOC);
 
-if ($_SESSION["teacher_id"] == $row["t_id"])
-    $teacher_name = $row["t_name"];
-else
-    header("location: dashboard.php");
+// if ($_SESSION["teacher_id"] == $row["t_id"])
+//     $teacher_name = $row["t_name"];
+// else
+//     header("location: dashboard.php");
 
-if (!isset($_GET["t_id"])) {
-    header("location: dashboard.php");
-}
+// if (!isset($_GET["t_id"])) {
+//     header("location: dashboard.php");
+// }
 
 $sql1 = "SELECT s_id,s_name,s_email,s_phone from students where s_id = $login_session_id";
 $student_data_for_values = $conn->query($sql1);
@@ -34,7 +34,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
 
 <body class="d-flex-center">
     <a class="kt-logout" href="logout.php">Logout</a>
-    <div class="kt-title">VIT Feedback Form for <?= $teacher_name; ?></div>
+    <div class="kt-title">VIT Feedback Form for <?= $row['t_name']; ?></div>
     <form class="kt-div" action="feedback.php?t_id=<?= $_GET['t_id']; ?>" method="POST">
         <!-- Error Box -->
         <div class="error-box" style="display: <?php echo (!empty($errors)) ? "block" : "none"; ?>">

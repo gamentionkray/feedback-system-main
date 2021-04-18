@@ -13,13 +13,20 @@ if (isset($_POST['login'])) {
     $password = $conn->real_escape_string($_POST['password']);
 
     if (($username && $password) != "") {
-        $sql = "SELECT id FROM admin_login WHERE username = '$username' and password = '$password'";
+        $sql = "SELECT * FROM admin WHERE a_username = '$username'";
         $result = $conn->query($sql);
         $row = $result->fetch_array(MYSQLI_ASSOC);
 
         if ($result->num_rows == 1) {
-            $_SESSION['admin_login'] = $username;
-            header("location: dashboard.php");
+            if (password_verify($password, $row["a_password"])) {
+                //return true;  
+                $_SESSION['admin_login'] = $username;
+                header("location: dashboard.php");
+            } else {
+                //return false;  
+                $error = "Invalid username or password!";
+                array_push($errors, $error);
+            }
             // echo $_SESSION['admin_login'];
         } else {
             $error = "Invalid username or password!";

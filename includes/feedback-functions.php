@@ -14,10 +14,10 @@ if (isset($_POST['submit_feedback'])) {
         $feedback6 = $conn->real_escape_string($_POST["feedback6"]);
 
         if (empty($errors)) {
-            $sql = "INSERT INTO student_feedback (s_id, t_id, f_comment, f_question1, f_question2, f_question3, f_question4, f_question5, f_question6) VALUES ('$login_session_id', '" . $_SESSION["teacher_id"] . "', '$comment', '$feedback1', '$feedback2', '$feedback3', '$feedback4', '$feedback5', '$feedback6')";
+            $sql = "INSERT INTO student_feedback (s_id, t_id, f_comment, f_question1, f_question2, f_question3, f_question4, f_question5, f_question6) VALUES ('$s_id', '$t_id', '$comment', '$feedback1', '$feedback2', '$feedback3', '$feedback4', '$feedback5', '$feedback6')";
 
             if ($conn->query($sql)) {
-                unset($_SESSION['teacher_id']);
+                header("Location: dashboard.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }

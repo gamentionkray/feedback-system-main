@@ -58,8 +58,6 @@ $result = $conn->query($sql);
                             foreach ($diff as $value) {
                                 if ($value == $row["t_name"])
                                     echo "No";
-                                else
-                                    echo "Yes";
                             }
                         } else {
                             echo "Yes";
@@ -71,10 +69,8 @@ $result = $conn->query($sql);
                         if (!empty($diff)) {
                             foreach ($diff as $value) {
                                 if ($value == $row["t_name"]) {
-                                    $_SESSION["teacher_id"] = $row["t_id"];
                                     echo "<a href='feedback.php?t_id=" . $row["t_id"] . "' name='send' class='kt-button'>Give Feedback</a>";
-                                } else
-                                    echo "<a href='#' name='send' class='kt-button disabled'>Give Feedback</a>";
+                                }
                             }
                         } else {
                             echo "<a href='#' name='send' class='kt-button disabled'>Give Feedback</a>";

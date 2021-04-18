@@ -5,7 +5,7 @@
 }
 body {
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   font-family: "Lato", sans-serif;
   font-weight: 700;
   color: #555;
@@ -80,7 +80,7 @@ a {
 /* Dashboard */
 .kt-dashboard-div {
   padding: 30px 35px 30px 35px;
-  margin: 20px 20px;
+  margin: 20px 0px;
   border-radius: 15px;
   background: #ecf0f3;
 }
