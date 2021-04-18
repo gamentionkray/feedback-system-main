@@ -16,7 +16,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style-dashboard.css">
     <script src="assets/js/app.js"></script>
-    <title>Student Dashboard</title>
+    <title><?= $login_session_name; ?> Dashboard</title>
 </head>
 
 <body>

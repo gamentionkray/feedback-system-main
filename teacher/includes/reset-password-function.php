@@ -24,7 +24,7 @@ if (isset($_POST['reset-password'])) {
             ];
             $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-            $sql = "UPDATE students SET s_password='$hashed_password' WHERE s_id ='" . $_SESSION['reset_token'] . "'";
+            $sql = "UPDATE teachers SET t_password='$hashed_password' WHERE t_id ='" . $_SESSION['reset_token'] . "'";
 
             if ($conn->query($sql)) {
                 header("location: login.php?success=2");

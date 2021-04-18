@@ -104,6 +104,9 @@ a {
 .mt-20 {
   margin-top: 20px;
 }
+.mt-40 {
+  margin-top: 40px;
+}
 
 /* Dashboard */
 .kt-dashboard-div {
@@ -182,4 +185,8 @@ table.kt-dashboard-table > tbody > tr > td {
 }
 .kt-button:active {
   background: #4a9764;
+}
+
+.error-red {
+  color: #ff3333;
 }

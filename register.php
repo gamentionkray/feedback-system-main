@@ -19,13 +19,13 @@ if (isset($_SESSION['student_login'])) {
     <link rel="stylesheet" href="assets/css/style-reg.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <title>Student Register</title>
+    <title>Student Registration</title>
 </head>
 
 <body>
     <div class="kt-div w-75">
         <div class="kt-logo"></div>
-        <div class="kt-title">Student Register</div>
+        <div class="kt-title">Student Registration</div>
 
         <form method="POST" action="register.php" class="kt-form">
             <div class="error-box" style="display: <?php echo (!empty($errors)) ? "block" : "none"; ?>">

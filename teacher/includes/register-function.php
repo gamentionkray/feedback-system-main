@@ -2,14 +2,12 @@
 
 //Registering a student
 if (isset($_POST['register'])) {
-    if (($_POST["name"] && $_POST["email"] && $_POST["password"] && $_POST["phone"]) != "" && isset($_POST['branch']) && isset($_POST['year'])) {
+    if (($_POST["name"] && $_POST["email"] && $_POST["password"] && $_POST["phone"]) != "") {
         //Initializing variables
         $name = $conn->real_escape_string($_POST["name"]);
         $email = $conn->real_escape_string($_POST["email"]);
         $password = $conn->real_escape_string($_POST["password"]);
         $phone = $conn->real_escape_string($_POST["phone"]);
-        $branch = $conn->real_escape_string($_POST["branch"]);
-        $year = $conn->real_escape_string($_POST["year"]);
 
         if (!preg_match("/^[A-Za-z0-9._%+-]+@vit.edu$/ix", $email)) {
             $error = "Enter a valid VIT.EDU email!";
@@ -35,13 +33,13 @@ if (isset($_POST['register'])) {
 
             $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-            $result = $conn->query("SELECT * FROM students WHERE s_email = '$email'");
+            $result = $conn->query("SELECT * FROM teachers WHERE t_email = '$email'");
 
             if ($result->num_rows > 0) {
                 $error = "You have already registered using $email!";
                 array_push($errors, $error);
             } else {
-                $sql = "INSERT INTO students (s_name, s_email, s_password, s_phone, s_branch, s_year) VALUES ('$name', '$email', '$hashed_password', '$phone', '$branch', '$year')";
+                $sql = "INSERT INTO teachers (t_name, t_email, t_password, t_phone) VALUES ('$name', '$email', '$hashed_password', '$phone')";
 
                 if ($conn->query($sql)) {
                     header("location: login.php?success=1");

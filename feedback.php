@@ -75,7 +75,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="c1" value="neutral" />
+                        <input class="state" type="radio" name="feedback1" id="c1" value="Neutral" />
                         <label class="label" for="c1">
                             <div class="indicator"></div>
                             <span class="text">Neutral</span>
@@ -89,8 +89,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="d1" value="Dissatisfied" />
-                        <label class="label" for="d1">
+                        <input class="state" type="radio" name="feedback1" id="e1" value="Highly Dissatisfied" />
+                        <label class="label" for="e1">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
                         </label>
@@ -118,7 +118,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback2" id="c2" value="neutral" />
+                        <input class="state" type="radio" name="feedback2" id="c2" value="Neutral" />
                         <label class="label" for="c2">
                             <div class="indicator"></div>
                             <span class="text">Neutral</span>
@@ -132,8 +132,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="d1" value="Dissatisfied" />
-                        <label class="label" for="d1">
+                        <input class="state" type="radio" name="feedback1" id="e2" value="Highly Dissatisfied" />
+                        <label class="label" for="e2">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
                         </label>
@@ -166,7 +166,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback3" id="c3" value="neutral" />
+                        <input class="state" type="radio" name="feedback3" id="c3" value="Neutral" />
                         <label class="label" for="c3">
                             <div class="indicator"></div>
                             <span class="text">Neutral</span>
@@ -180,8 +180,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="d1" value="Dissatisfied" />
-                        <label class="label" for="d1">
+                        <input class="state" type="radio" name="feedback1" id="e3" value="Highly Dissatisfied" />
+                        <label class="label" for="e3">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
                         </label>
@@ -209,7 +209,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback4" id="c4" value="neutral" />
+                        <input class="state" type="radio" name="feedback4" id="c4" value="Neutral" />
                         <label class="label" for="c4">
                             <div class="indicator"></div>
                             <span class="text">Neutral</span>
@@ -223,8 +223,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="d1" value="Dissatisfied" />
-                        <label class="label" for="d1">
+                        <input class="state" type="radio" name="feedback1" id="e4" value="Highly Dissatisfied" />
+                        <label class="label" for="e4">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
                         </label>
@@ -257,7 +257,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback5" id="c5" value="neutral" />
+                        <input class="state" type="radio" name="feedback5" id="c5" value="Neutral" />
                         <label class="label" for="c5">
                             <div class="indicator"></div>
                             <span class="text">Neutral</span>
@@ -271,8 +271,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="d1" value="Dissatisfied" />
-                        <label class="label" for="d1">
+                        <input class="state" type="radio" name="feedback1" id="e5" value="Highly Dissatisfied" />
+                        <label class="label" for="e5">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
                         </label>
@@ -300,7 +300,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback6" id="c6" value="neutral" />
+                        <input class="state" type="radio" name="feedback6" id="c6" value="Neutral" />
                         <label class="label" for="c6">
                             <div class="indicator"></div>
                             <span class="text">Neutral</span>
@@ -314,8 +314,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="d1" value="Dissatisfied" />
-                        <label class="label" for="d1">
+                        <input class="state" type="radio" name="feedback1" id="e6" value="Highly Dissatisfied" />
+                        <label class="label" for="e6">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
                         </label>
