@@ -91,7 +91,7 @@ if (isset($_GET['delete_id'])) {
                         echo "<td>" . $feedback_row["f_question5"] . "</td>";
                         echo "<td>" . $feedback_row["f_question6"] . "</td>";
                         echo "<td>" . $feedback_row["f_comment"] . "</td>";
-                        echo "<td><a href='dashboard.php?delete_id=" . $feedback_row['f_id'] . "' class='kt-button'>Delete</a>";
+                        echo "<td><a href='dashboard.php?delete_id=" . $feedback_row['f_id'] . "' class='kt-button'>Delete</a></td>";
                         echo "</tr>";
                     }
                 } else {
@@ -105,7 +105,7 @@ if (isset($_GET['delete_id'])) {
                     echo "<td>NA</td>";
                     echo "<td>NA</td>";
                     echo "<td>NA</td>";
-                    echo "<td><a href='#' class='kt-button'>Delete</a>";
+                    echo "<td></td>";
                     echo "</tr>";
                 }
 

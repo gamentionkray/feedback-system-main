@@ -79,6 +79,7 @@ a {
 table.kt-dashboard-table {
   margin-top: 20px;
   border-spacing: 0;
+  width: 100%;
   color: #212121;
   text-align: center;
   box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
