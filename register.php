@@ -82,17 +82,17 @@ if (isset($_SESSION['student_login'])) {
                             </label>
                         </div>
                         <div class="wrapper">
-                            <input class="state" type="radio" name="branch" id="ce" value="Computer Engineering" />
-                            <label class="label" for="ce">
-                                <div class="indicator"></div>
-                                <span class="text">Computer Engineering</span>
-                            </label>
-                        </div>
-                        <div class="wrapper">
                             <input class="state" type="radio" name="branch" id="pe" value="Production Engineering" />
                             <label class="label" for="pe">
                                 <div class="indicator"></div>
                                 <span class="text">Production Engineering</span>
+                            </label>
+                        </div>
+                        <div class="wrapper">
+                            <input class="state" type="radio" name="branch" id="ce" value="Computer Engineering" />
+                            <label class="label" for="ce">
+                                <div class="indicator"></div>
+                                <span class="text">Computer Engineering</span>
                             </label>
                         </div>
                         <div class="wrapper">
