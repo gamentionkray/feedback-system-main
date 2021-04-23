@@ -1,7 +1,16 @@
 <?php
 include('includes/dashboard-functions.php');
-$sql = "SELECT TE.t_name as t_name, TE.t_id as t_id FROM teachers TE";
+
+$sql = "SELECT sub_id, t_name, sub_name
+        FROM teacher_subjects  
+        INNER JOIN teachers  
+        ON teacher_subjects.t_id=teachers.t_id 
+        INNER JOIN  students  
+        ON teacher_subjects.branch=students.s_branch 
+        AND students.s_id = '$login_session_id'
+        AND teacher_subjects.sub_year=students.s_year";
 $result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +24,7 @@ $result = $conn->query($sql);
     initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style-dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/app.js"></script>
     <title><?= $login_session_name; ?> Dashboard</title>
 </head>
@@ -36,6 +46,7 @@ $result = $conn->query($sql);
             <thead>
                 <tr>
                     <th>Teacher Name</th>
+                    <th>Subject</th>
                     <th>Feedback given?</th>
                     <th></th>
                 </tr>
@@ -51,15 +62,17 @@ $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row["t_name"] . "</td>"; ?>
+                    echo "<td>" . $row["t_name"] . "</td>";
+                    echo "<td>" . $row["sub_name"] . "</td>"; ?>
                     <td>
                         <?php
                         if (!empty($diff)) {
                             foreach ($diff as $value) {
-                                if ($value == $row["t_name"])
+                                if ($value == $row["sub_id"])
                                     echo "No";
                             }
                         } else {
+                            // echo "No";
                             echo "Yes";
                         }
                         ?>
@@ -68,11 +81,12 @@ $result = $conn->query($sql);
                         <?php
                         if (!empty($diff)) {
                             foreach ($diff as $value) {
-                                if ($value == $row["t_name"]) {
-                                    echo "<a href='feedback.php?t_id=" . $row["t_id"] . "' name='send' class='kt-button'>Give Feedback</a>";
+                                if ($value == $row["sub_id"]) {
+                                    echo "<a href='feedback.php?sub_id=" . $row["sub_id"] . "' name='send' class='kt-button'>Give Feedback</a>";
                                 }
                             }
                         } else {
+                            // echo "<a href='feedback.php?sub_id=" . $row["sub_id"] . "' name='send' class='kt-button'>Give Feedback</a>";
                             echo "<a href='#' name='send' class='kt-button disabled'>Give Feedback</a>";
                         }
                         ?>

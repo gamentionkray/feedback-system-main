@@ -1,6 +1,11 @@
 <?php
 include('includes/feedback-functions.php');
-$sql = "SELECT TE.t_name as t_name, TE.t_id as t_id FROM teachers TE where TE.t_id = " . $_GET['t_id'];
+// $sql = "SELECT TE.t_name as t_name, TE.t_id as t_id FROM teachers TE where TE.t_id = " . $_GET['t_id'];
+$sql = "SELECT t_name, sub_name
+        FROM teachers  
+        INNER JOIN teacher_subjects
+        ON teacher_subjects.sub_id = " . $_GET['sub_id'];
+
 $result = $conn->query($sql);
 $row = $result->fetch_array(MYSQLI_ASSOC);
 
@@ -34,8 +39,8 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
 
 <body class="d-flex-center">
     <a class="kt-logout" href="logout.php">Logout</a>
-    <div class="kt-title">VIT Feedback Form for <?= $row['t_name']; ?></div>
-    <form class="kt-div" action="feedback.php?t_id=<?= $_GET['t_id']; ?>" method="POST">
+    <div class="kt-title">Feedback Form for <?= $row['t_name'] . " on " . $row['sub_name']; ?> </div>
+    <form class="kt-div" action="feedback.php?sub_id=<?= $_GET['sub_id']; ?>" method="POST">
         <!-- Error Box -->
         <div class="error-box" style="display: <?php echo (!empty($errors)) ? "block" : "none"; ?>">
             <?php
@@ -132,7 +137,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="e2" value="Highly Dissatisfied" />
+                        <input class="state" type="radio" name="feedback2" id="e2" value="Highly Dissatisfied" />
                         <label class="label" for="e2">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
@@ -180,7 +185,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="e3" value="Highly Dissatisfied" />
+                        <input class="state" type="radio" name="feedback3" id="e3" value="Highly Dissatisfied" />
                         <label class="label" for="e3">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
@@ -223,7 +228,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="e4" value="Highly Dissatisfied" />
+                        <input class="state" type="radio" name="feedback4" id="e4" value="Highly Dissatisfied" />
                         <label class="label" for="e4">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
@@ -271,7 +276,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="e5" value="Highly Dissatisfied" />
+                        <input class="state" type="radio" name="feedback5" id="e5" value="Highly Dissatisfied" />
                         <label class="label" for="e5">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>
@@ -314,7 +319,7 @@ $row_for_student = $student_data_for_values->fetch_array(MYSQLI_ASSOC);
                         </label>
                     </div>
                     <div class="wrapper">
-                        <input class="state" type="radio" name="feedback1" id="e6" value="Highly Dissatisfied" />
+                        <input class="state" type="radio" name="feedback6" id="e6" value="Highly Dissatisfied" />
                         <label class="label" for="e6">
                             <div class="indicator"></div>
                             <span class="text">Highly Dissatisfied</span>

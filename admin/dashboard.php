@@ -8,9 +8,11 @@ $feedback_result = $conn->query($feedback_sql);
 
 $count_sql = "SELECT * FROM teachers";
 $count_result = $conn->query($count_sql);
+
 while ($count_row = $count_result->fetch_assoc()) {
     $count_in_sql = "SELECT count(t_id) as count_id FROM student_feedback WHERE t_id = " . $count_row['t_id'] . "";
     $count_in_result = $conn->query($count_in_sql);
+
     while ($count_in_row = $count_in_result->fetch_assoc()) {
         $count_data[$count_row['t_id']] = $count_in_row['count_id'];
     }
@@ -57,6 +59,9 @@ if (isset($_GET['delete_id'])) {
                 <tr>
                     <th>Teacher Name</th>
                     <th>Student Name</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Subject</th>
                     <th>Teaching methods</th>
                     <th>Facilities provided</th>
                     <th>Different clubs</th>
@@ -84,6 +89,14 @@ if (isset($_GET['delete_id'])) {
                         while ($students_row = $students_result->fetch_assoc()) {
                             echo "<td>" . $students_row["s_name"] . "</td>";
                         }
+
+                        $subject_sql = "SELECT * FROM teacher_subjects WHERE t_id = " . $feedback_row['t_id'] . " AND sub_id = " . $feedback_row['sub_id'];
+                        $subject_result = $conn->query($subject_sql);
+                        while ($subject_row = $subject_result->fetch_assoc()) {
+                            echo "<td>" . $subject_row["branch"] . "</td>";
+                            echo "<td>" . $subject_row["sub_year"] . "</td>";
+                            echo "<td>" . $subject_row["sub_name"] . "</td>";
+                        }
                         echo "<td>" . $feedback_row["f_question1"] . "</td>";
                         echo "<td>" . $feedback_row["f_question2"] . "</td>";
                         echo "<td>" . $feedback_row["f_question3"] . "</td>";
@@ -96,6 +109,9 @@ if (isset($_GET['delete_id'])) {
                     }
                 } else {
                     echo "<tr>";
+                    echo "<td>NA</td>";
+                    echo "<td>NA</td>";
+                    echo "<td>NA</td>";
                     echo "<td>NA</td>";
                     echo "<td>NA</td>";
                     echo "<td>NA</td>";
