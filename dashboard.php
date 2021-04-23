@@ -26,7 +26,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="assets/css/style-dashboard.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <title><?= $login_session_name; ?> Dashboard</title>
+    <title><?= $login_session_name; ?>'s Dashboard</title>
 </head>
 
 <body>
