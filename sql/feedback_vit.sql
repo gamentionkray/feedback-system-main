@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 23, 2021 at 10:27 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Host: localhost:3306
+-- Generation Time: Apr 25, 2021 at 09:59 AM
+-- Server version: 5.5.63-MariaDB
+-- PHP Version: 7.3.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `feedback_vit`
+-- Database: `olwkitjh_vit-feedback`
 --
 
 -- --------------------------------------------------------
@@ -62,9 +62,11 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`s_id`, `s_name`, `s_email`, `s_password`, `s_phone`, `s_branch`, `s_year`) VALUES
-(1, 'Krishna Thorat', 'krishna.thorat20@vit.edu', '$2y$09$kl7WENw1pLimO.omT9HATOrRMk9MtORLio8FLy9URf7bPFb2qG/Am', '8550969625', 'MCA', 'First'),
-(2, 'ABC', 'abc@vit.edu', '$2y$09$UFGsLXMW2GALq2JA8V5bLels7xGUegXpQo5yGY61BGZ.2A9fEBnZW', '9999999999', 'MCA', 'First'),
-(3, 'XYZ', 'xyz@vit.edu', '$2y$09$UFGsLXMW2GALq2JA8V5bLels7xGUegXpQo5yGY61BGZ.2A9fEBnZW', '9999999999', 'MCA', 'Second');
+(1, 'Krishna Thorat', 'krishna.thorat20@vit.edu', '$2y$09$JLJctgVn1M4TyLs.cY1QyOUN9TmVzeJ2iBqCnuVMnfDgWPUuqmpnO', '8550969625', 'MCA', 'First'),
+(4, 'Asawari Aherao', 'asawari.aherao20@vit.edu', '$2y$09$Uzh4ytDpQ5QDaEbWZFKD/uzwURNiX8wsk/Q3irg2qDScMRkG5XLvm', '8446568053', 'MCA', 'First'),
+(5, 'Twinkle Gupta', 'twinkle.gupta20@vit.edu', '$2y$09$BiTLyfThM/da6ZP97y66RuFjTHR1YRZifmJDR9q3inkjO3uK/DKo6', '9595680794', 'MCA', 'First'),
+(6, 'Payal Bhirud', 'payal.bhirud20@vit.edu', '$2y$09$4EaQ/FPbD9dyS4oyFTgWHOBsjrazVniNEnuB4c9fWKN4iVdsMX1b.', '9834368055', 'MCA', 'First'),
+(7, 'Krishna Yangale', 'krishna.yangale20@vit.edu', '$2y$09$TjRUa5rCOlERn7chynHS1eOm78/MARHZgklVwCusyOYN0G28FLdrm', '8169285583', 'MCA', 'First');
 
 -- --------------------------------------------------------
 
@@ -91,9 +93,11 @@ CREATE TABLE `student_feedback` (
 --
 
 INSERT INTO `student_feedback` (`f_id`, `s_id`, `t_id`, `sub_id`, `f_comment`, `f_question1`, `f_question2`, `f_question3`, `f_question4`, `f_question5`, `f_question6`) VALUES
-(3, 2, 4, 2, 'Good!', 'Highly Dissatisfied', 'Neutral', 'Neutral', 'Satisfied', 'Satisfied', 'Neutral'),
-(11, 1, 4, 1, 'Nice!', 'Highly Satisfied', 'Highly Satisfied', 'Highly Satisfied', 'Highly Satisfied', 'Highly Satisfied', 'Highly Satisfied'),
-(12, 1, 4, 2, 'Nice', 'Highly Satisfied', 'Neutral', 'Satisfied', 'Neutral', 'Neutral', 'Satisfied');
+(14, 4, 5, 4, 'Good teaching', 'Highly Satisfied', 'Neutral', 'Satisfied', 'Highly Satisfied', 'Satisfied', 'Highly Satisfied'),
+(15, 1, 5, 4, 'Great', 'Highly Satisfied', 'Satisfied', 'Highly Satisfied', 'Satisfied', 'Satisfied', 'Highly Satisfied'),
+(16, 5, 5, 4, 'Satisfied', 'Neutral', 'Neutral', 'Satisfied', 'Satisfied', 'Highly Satisfied', 'Highly Satisfied'),
+(17, 6, 5, 4, 'Good', 'Satisfied', 'Neutral', 'Highly Satisfied', 'Neutral', 'Satisfied', 'Highly Satisfied'),
+(18, 7, 5, 4, 'Good teaching', 'Highly Satisfied', 'Satisfied', 'Dissatisfied', 'Neutral', 'Satisfied', 'Highly Dissatisfied');
 
 -- --------------------------------------------------------
 
@@ -114,7 +118,7 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`t_id`, `t_name`, `t_email`, `t_password`, `t_phone`) VALUES
-(4, 'New', 'new@vit.edu', '$2y$09$k0C.DveJeapP8AIuuafD0.hY22BfPDCK2UdFLcqAxd0EwLMPRUOhW', '8888888888');
+(5, 'Aparna Sawant', 'aparna.mete@vit.edu', '$2y$09$yeSKfjIVyFeHP6AqEdDBOuNh2QTAvCYTTJR1/T51xu7SVM4bWPFVC', '9021155735');
 
 -- --------------------------------------------------------
 
@@ -135,9 +139,8 @@ CREATE TABLE `teacher_subjects` (
 --
 
 INSERT INTO `teacher_subjects` (`sub_id`, `t_id`, `branch`, `sub_year`, `sub_name`) VALUES
-(1, 4, 'MCA', 'First', 'SEPM'),
-(2, 4, 'MCA', 'First', 'DBMS'),
-(3, 4, 'MCA', 'First', 'Demo');
+(4, 5, 'MCA', 'First', 'Web Technology'),
+(5, 5, 'MCA', 'Second', 'Advance Web Technology');
 
 --
 -- Indexes for dumped tables
@@ -191,25 +194,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `student_feedback`
 --
 ALTER TABLE `student_feedback`
-  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `teacher_subjects`
 --
 ALTER TABLE `teacher_subjects`
-  MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

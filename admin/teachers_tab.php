@@ -35,13 +35,13 @@ if (isset($_GET['delete_id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="dashboard_style.css">
     <script src="../assets/js/app.js"></script>
-    <title>Students List</title>
+    <title>Teacher List</title>
 </head>
 
 <body>
     <?php include_once('aside/header.php'); ?>
     <div class="kt-dashboard-div">
-        <div class="kt-dashboard-title">Students List</div>
+        <div class="kt-dashboard-title">Teacher List</div>
         <table class="kt-dashboard-table">
             <thead>
                 <tr>
